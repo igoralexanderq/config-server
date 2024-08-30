@@ -8,16 +8,15 @@ spring:
       uri: mongodb://mitocode:mitocode@localhost:27017/mitocode?authSource=admin
 # Postgres Configuration
   jpa:
-    databasePlatform:    
+    databasePlatform:
+    hibernate: 
+      ddl-auto: create
       show-sql: true
       properties:
         hibernate:
           format_sql: true
           dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate: 
-      ddl-auto: create
   datasource: 
     url: jdbc:postgresql://localhost:5432/mitocode
     username: mitocode
-    #password: '{cipher}64cc940d07b4dcb7123a6743cf9bacea1f347a3df82a0c228eed32065f5715db'
     password: mitocode
