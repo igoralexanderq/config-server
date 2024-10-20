@@ -1,0 +1,20 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9080}
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service-route #Es un id interno dentro de la configuración del gateway
+          #uri: http://service-1.com, http://service-2.com
+          uri: lb://product-service
+          predicates: #Condiciones para que se ejecute la ruta
+            - Path=/api/product-service/** #Si la ruta es igual a /api/product-service/**
+          filters: #Filtros que se pueden aplicar a la ruta
+            - StripPrefix=2 #Quitar el prefijo /api/product-service/**
+        - id: user-service-route
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user-service/**
+          filters:
+            - StripPrefix=2
