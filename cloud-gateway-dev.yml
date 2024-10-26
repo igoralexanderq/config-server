@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
         - id: product-service-route
-          uri: lb://product-service #http://service-1.com, http://service-2.com
+          uri: lb://PRODUCT-SERVICE #http://service-1.com, http://service-2.com
           predicates:
             - Path=/api/product-service/**
           filters:
