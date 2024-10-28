@@ -18,3 +18,4 @@ spring:
             - Path=/api/user-service/**
           filters:
             - StripPrefix=2
+            - Name: CustomFilter
