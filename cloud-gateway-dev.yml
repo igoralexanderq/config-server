@@ -18,7 +18,8 @@ spring:
             - Path=/api/user-service/**
           filters:
             - StripPrefix=2
-            - Name: CustomFilter
-              args:
-                headerKey: MitocodeKey
-                headerValue: MitocodeValue
+            #- Name: CustomFilter
+            #  args:
+            #    headerKey: MitocodeKey
+            #    headerValue: MitocodeValue
+            - UserServiceFilter=MitocodeKey, MitocodeValue #Eso es así cuando se utiliza el método: name de la clase CustomFilter.
