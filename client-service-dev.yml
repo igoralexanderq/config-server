@@ -1,6 +1,7 @@
 server:
   port: ${CUSTOM.SERVER.PORT:9010}
 
+#Actuator Configuration
 management:
   endpoints:
     web:
@@ -8,3 +9,18 @@ management:
         #include: "men, disk, cpu, health, info, loggers, heapdump, threaddump, metrics, mappings, beans, env, configprops, autoconfig, refresh"
         include: '*'
         #base-path: /actuator #Defecto
+
+#Circuit Breaker Configuration
+resilience4j:
+  circuitbreaker:
+    configs:
+      cualquier-cosa:
+        slidingWindowSize: 15
+        failureRateThreshold: 20
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 8
+        slowCallDurationThreshold: 500ms
+        slowCallRateThreshold: 50
+    instances:
+      product-service-cb:
+        baseConfig: cualquier-cosa
