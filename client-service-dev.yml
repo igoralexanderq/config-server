@@ -14,7 +14,7 @@ management:
 resilience4j:
   circuitbreaker:
     configs:
-      cualquier-cosa:
+      mitocode-product:
         slidingWindowSize: 15
         failureRateThreshold: 20
         waitDurationInOpenState: 20s
@@ -23,4 +23,4 @@ resilience4j:
         slowCallRateThreshold: 50
     instances:
       product-service-cb:
-        baseConfig: cualquier-cosa
+        baseConfig: mitocode-product
