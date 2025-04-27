@@ -1,15 +1,6 @@
 server:
   port: ${CUSTOM.SERVER.PORT:9010}
 
-#Actuator Configuration
-management:
-  endpoints:
-    web:
-      exposure:
-        #include: "men, disk, cpu, health, info, loggers, heapdump, threaddump, metrics, mappings, beans, env, configprops, autoconfig, refresh"
-        include: '*'
-        #base-path: /actuator #Defecto
-
 #Circuit Breaker Configuration
 resilience4j:
   circuitbreaker:
@@ -24,3 +15,12 @@ resilience4j:
     instances:
       mitocode-product:
         base-config: product-service-cb
+
+#Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        #include: "men, disk, cpu, health, info, loggers, heapdump, threaddump, metrics, mappings, beans, env, configprops, autoconfig, refresh"
+        include: '*'
+        #base-path: /actuator #Defecto
