@@ -1,6 +1,21 @@
 server:
   port: ${CUSTOM.SERVER.PORT:9080}
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      product-service-cb:
+        slidingWindowSize: 12
+        failureRateThreshold: 48
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 8
+        slowCallRateThreshold: 58
+        slowCallDurationThreshold: 500ms
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+    instances:
+      mitocode-product:
+        base-config: product-service-cb
+
 # Spring Cloud Gateway Routes
 spring:
   cloud:
