@@ -17,7 +17,7 @@ spring:
               args:
                 name: mitocode-product
                 statusCodes: 400,401,403,500,503
-                fallbackUri: forward:/api/user-service/api/mitocode/user
+                #fallbackUri: forward:/api/user-service/api/mitocode/user
         - id: user-service-route
           uri: lb://user-service
           predicates:
