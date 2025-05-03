@@ -28,9 +28,9 @@ spring:
           filters:
             - StripPrefix=2
             - AddRequestParameter=flag,true
-            - name: CircuitBreaker
-              args:
-                name: mitocode-product
+            #- name: CircuitBreaker
+              #args:
+                #name: mitocode-product
                 #statusCodes: 400,401,403,500,503
                 #fallbackUri: forward:/api/user-service/api/mitocode/user
         - id: user-service-route
