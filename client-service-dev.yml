@@ -6,16 +6,16 @@ resilience4j:
   circuitbreaker:
     configs:
       product-service-cb: #<- Identificador de la configuración
-        slidingWindowSize: 12
-        failureRateThreshold: 48
-        waitDurationInOpenState: 10s
+        slidingWindowSize: 12 #<- Tamaño de la ventana deslizante
+        failureRateThreshold: 48 #<- Porcentaje de fallos
+        waitDurationInOpenState: 10s #<- Tiempo en el que se mantiene abierto el circuito
         permittedNumberOfCallsInHalfOpenState: 8
-        slowCallRateThreshold: 58
-        #slowCallDurationThreshold: 500ms
-        automaticTransitionFromOpenToHalfOpenEnabled: true
+        slowCallRateThreshold: 58 #<- Porcentaje de llamadas lentas
+        slowCallDurationThreshold: 500ms #<- Tiempo de respuesta lento
+        automaticTransitionFromOpenToHalfOpenEnabled: true #<- Permitir transición automática de abierto a medio abierto
     instances:
-      mitocode-product:
-        base-config: product-service-cb
+      mitocode-product: #<- Nombre del servicio
+        base-config: product-service-cb #<- Nombre de la configuración
 
 #Actuator Configuration
 management:
