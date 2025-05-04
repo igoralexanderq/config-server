@@ -11,7 +11,7 @@ resilience4j:
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 8
         slowCallRateThreshold: 58
-        slowCallDurationThreshold: 500ms
+        #slowCallDurationThreshold: 500ms
         automaticTransitionFromOpenToHalfOpenEnabled: true
     instances:
       mitocode-product:
