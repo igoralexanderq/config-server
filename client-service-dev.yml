@@ -5,7 +5,7 @@ server:
 resilience4j:
   circuitbreaker:
     configs:
-      product-service-cb:
+      product-service-cb: #<- Identificador de la configuración
         slidingWindowSize: 12
         failureRateThreshold: 48
         waitDurationInOpenState: 10s
@@ -13,7 +13,6 @@ resilience4j:
         slowCallRateThreshold: 58
         slowCallDurationThreshold: 500ms
         automaticTransitionFromOpenToHalfOpenEnabled: true
-
     instances:
       mitocode-product:
         base-config: product-service-cb
