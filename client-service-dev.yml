@@ -16,6 +16,13 @@ resilience4j:
     instances:
       mitocode-product: #<- Nombre del servicio
         base-config: product-service-cb #<- Nombre de la configuración
+  timeLimiter:
+    configs:
+      product-service-tl:
+        timeoutDuration: 1s #<- Tiempo de espera para las llamadas
+      instances:
+        mitocode-product-tl: #<- Nombre del servicio
+          base-config: product-service-tl #<- Nombre de la configuración del time limiter
 
 #Actuator Configuration
 management:
@@ -25,3 +32,4 @@ management:
         #include: "men, disk, cpu, health, info, loggers, heapdump, threaddump, metrics, mappings, beans, env, configprops, autoconfig, refresh"
         include: '*'
         #base-path: /actuator #Defecto
+
