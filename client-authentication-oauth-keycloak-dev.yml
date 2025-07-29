@@ -15,4 +15,4 @@ spring:
               client-id: mitocode-client
               client-secret: MYbNUshfBCKPu2OMCTpnDS6SlYw31rjd
               scope: openid
-              authorization-grand-type: authorization_code
+              authorization-grant-type: authorization_code
