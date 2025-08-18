@@ -3,7 +3,7 @@ server:
 
 mitocode:
   security:
-    key: mitocode-secret
+    key: a83425b983bec6b040197c9a88a366c6ee2f3243a297f656a4fb1ca2b4cdea17
 
 
 # Mongo Configuration
