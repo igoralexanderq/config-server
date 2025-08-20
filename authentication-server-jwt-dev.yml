@@ -11,3 +11,13 @@ spring:
   data:
     mongodb:
       uri: mongodb://mitocode:mitocode@localhost:27017/mitocode?authSource=admin
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator         # default, solo para dejar claro
+      exposure:
+        include: health,info,mappings,env,beans,configprops,loggers
+  endpoint:
+    health:
+      show-details: always         # útil en dev
